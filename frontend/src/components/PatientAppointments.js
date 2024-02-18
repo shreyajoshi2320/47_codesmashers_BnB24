@@ -1,11 +1,15 @@
 // components/PatientAppointments.js
-import React, { useState, useEffect } from 'react';
-import { Typography, List, ListItem, ListItemText, Paper, Button } from '@mui/material';
-import EmergencyContact from './EmergencyContact';
+import React, { useState, useEffect } from "react";
+import {
+  Typography,
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Button,
+} from "@mui/material";
 
 function PatientAppointments() {
-  // const emergencyNumber = '123-456-7890';
-
   const [appointments, setAppointments] = useState([]);
 
   useEffect(() => {
@@ -17,17 +21,22 @@ function PatientAppointments() {
 
   const handleScheduleAppointment = () => {
     // Redirect to appointment form
-    window.location.href = '/appointment-form';
+    window.location.href = "/appointment-form";
   };
 
   return (
     <div>
-      <Typography variant="h5" sx={{ marginBottom: 2 }}>Your Appointments</Typography>
+      <Typography variant="h5" sx={{ marginBottom: 2 }}>
+        Your Appointments
+      </Typography>
       <Paper elevation={3} sx={{ padding: 2 }}>
         {appointments.length > 0 ? (
           <List>
             {appointments.map((appointment, index) => (
-              <ListItem key={index} sx={{ borderBottom: '1px solid #ddd', marginBottom: 1 }}>
+              <ListItem
+                key={index}
+                sx={{ borderBottom: "1px solid #ddd", marginBottom: 1 }}
+              >
                 <ListItemText
                   primary={`Doctor: ${appointment.doctorName}`}
                   secondary={`Date: ${appointment.date}, Time: ${appointment.time}`}

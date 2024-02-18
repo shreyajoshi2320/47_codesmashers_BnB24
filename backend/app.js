@@ -8,6 +8,7 @@ const appointmentRouter = require('./routes/appointment-routes');
 const adminRouter = require('./routes/admin-routes');
 const doctorRouter = require('./routes/doctor-routes');
 const patientRouter = require('./routes/patient-routes');
+const patient2Router = require('./routes/patient2-routes');
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use(express.json());
 app.use('/admin', adminRouter);
 app.use('/doctor', doctorRouter);
 app.use('/patient', patientRouter);
+app.use('/patient2', patient2Router);
 app.use('/appointments', appointmentRouter);
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
